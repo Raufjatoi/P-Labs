@@ -22,7 +22,7 @@ const Footer = () => {
           
           <div className="flex items-center justify-center gap-6">
             <a
-              href="https://github.com/raufjatoi"
+              href="https://github.com/Raufjatoi"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-2"
@@ -31,7 +31,7 @@ const Footer = () => {
               <span>GitHub</span>
             </a>
             <a
-              href="mailto:raufjatoi@example.com"
+              href="mailto:raufpokemon00@gmail.com"
               className="text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-2"
             >
               <Mail className="w-5 h-5" />
@@ -49,7 +49,7 @@ const Footer = () => {
           </div>
           
           <div className="text-sm text-muted-foreground">
-            <p>© 2024 P Labs. All rights reserved.</p>
+            <p> 2025 P Labs | iCreativez</p>
             <p className="mt-2">
               Transform your ML ideas into reality with our AI-powered platform.
             </p>

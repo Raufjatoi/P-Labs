@@ -6,7 +6,7 @@ const TeamSection = () => {
     {
       name: "Muhammad Kamran",
       role: "Team Lead",
-      bio: "Leads product vision, ML strategy and project coordination.",
+      bio: "Mern Full Stack Developer",
       img: "kamran.png",
       github: "",
       mail: "",
@@ -17,8 +17,8 @@ const TeamSection = () => {
       role: "Developer",
       bio: "Full-stack developer and the core builder of this app.",
       img: "rauf.png",
-      github: "https://github.com/rauf",
-      mail: "mailto:rauf@example.com",
+      github: "https://github.com/Raufjatoi",
+      mail: "mailto:raufpokemon00@icloud.com",
       portfolio: "https://raufjatoi.vercel.app"
     },
   ];
