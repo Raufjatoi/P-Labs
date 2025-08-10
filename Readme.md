@@ -28,7 +28,7 @@ With **P Labs**, you can bring your machine learning ideas to life simply by des
 | Tailwind CSS| ![Tailwind Logo](public/tailwind.png) |
 | Shadcn      | ![Shadcn Logo](public/shadcn.jpg) |
 | Stripe      | ![Stripe Logo](public/stripe.png) |
-| Deno        | ![Deno Logo](public/deno.png) |
+| Deno        | ![Deno Logo](public/deno.jpg) |
 | TypeScript  | ![TypeScript Logo](public/ts.png) |  
 
 ---
