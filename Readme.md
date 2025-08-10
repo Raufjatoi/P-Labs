@@ -51,4 +51,4 @@ Use the following test card details for demo purposes:
 ![P-Labs test card](public/test.png)  
 
 ## **Website**
-(https://p-labs.vercel.app/)[https://p-labs.vercel.app/]
+[https://p-labs.vercel.app/](https://p-labs.vercel.app/)
