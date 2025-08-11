@@ -266,12 +266,14 @@ Make it production-ready and well-structured.`
                       )}
                     </Button>
                     <Button 
-                      variant="outline" 
-                      className="sm:w-auto w-full h-10 sm:h-11 text-sm sm:text-base"
-                    >
-                      <Upload className="w-4 h-4 mr-2 flex-shrink-0" />
-                      <span className="truncate">Upload Data</span>
-                    </Button>
+  variant="outline" 
+  disabled
+  className="sm:w-auto w-full h-10 sm:h-11 text-sm sm:text-base opacity-60 cursor-not-allowed"
+>
+  <Upload className="w-4 h-4 mr-2 flex-shrink-0" />
+  <span className="truncate">Files upload soon</span>
+</Button>
+
                   </div>
                 </div>
 
