@@ -101,7 +101,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const register = async (email: string, password: string, name: string) => {
     setIsLoading(true);
     
-    const redirectUrl = `${window.location.origin}/`;
+    const redirectUrl = "https://p-labs.vercel.app/";
     
     const { error } = await supabase.auth.signUp({
       email,
