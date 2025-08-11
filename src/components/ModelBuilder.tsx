@@ -201,141 +201,166 @@ Make it production-ready and well-structured.`
   ];
 
   return (
-    <section id="model-builder" className="py-20 px-4 bg-gradient-to-br from-background to-muted/30">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-heading font-bold text-foreground mb-4">
+    <section id="model-builder" className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-6 bg-gradient-to-br from-background to-muted/30">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section - Mobile Optimized */}
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-3 sm:mb-4 px-2">
             Build Your ML Model
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             Describe your machine learning idea and we'll generate the Python code for you.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Input Section */}
-          <Card className="shadow-card border-0">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Send className="w-5 h-5" />
-                Describe Your Model
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="space-y-4">
-                <Textarea
-                  placeholder="E.g., I want to predict house prices based on location, size, and age..."
-                  value={prompt}
-                  onChange={(e) => setPrompt(e.target.value)}
-                  className="min-h-[120px] resize-none border-0 bg-muted/50 focus-visible:ring-1 focus-visible:ring-accent"
-                />
-                
-                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button
-                    onClick={handleGenerate}
-                    disabled={!prompt.trim() || isGenerating || (user?.plan === 'free' && user.apiCallsUsed >= user.apiCallsLimit)}
-                    className="flex-1"
-                    variant="hero"
-                  >
-                    {!user ? (
-                      <>
-                        <Lock className="w-4 h-4 mr-2" />
-                        Sign In Required
-                      </>
-                    ) : user.plan === 'free' && user.apiCallsUsed >= user.apiCallsLimit ? (
-                      <>
-                        <Zap className="w-4 h-4 mr-2" />
-                        Upgrade Plan
-                      </>
-                    ) : isGenerating ? (
-                      <>
-                        <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
-                        Generating...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4 mr-2" />
-                        Generate Model
-                      </>
-                    )}
-                  </Button>
-                  <Button variant="outline" size="icon" className="sm:w-auto w-full">
-                    <Upload className="w-4 h-4" />
-                    <span className="sm:hidden ml-2">Upload Data</span>
-                  </Button>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <p className="text-sm font-medium text-foreground">Quick suggestions:</p>
-                <div className="flex flex-wrap gap-2">
-                  {suggestions.map((suggestion, index) => (
-                    <Badge
-                      key={index}
-                      variant="secondary"
-                      className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors"
-                      onClick={() => setPrompt(suggestion)}
+        {/* Main Content Grid - Responsive Layout */}
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8">
+          {/* Input Section - Mobile First Design */}
+          <div className="order-1 xl:order-1">
+            <Card className="shadow-card border-0 h-fit">
+              <CardHeader className="pb-4 sm:pb-6">
+                <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                  <span className="truncate">Describe Your Model</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 sm:space-y-6">
+                <div className="space-y-4">
+                  {/* Textarea - Mobile Optimized */}
+                  <Textarea
+                    placeholder="E.g., I want to predict house prices based on location, size, and age..."
+                    value={prompt}
+                    onChange={(e) => setPrompt(e.target.value)}
+                    className="min-h-[100px] sm:min-h-[120px] md:min-h-[140px] resize-none border-0 bg-muted/50 focus-visible:ring-1 focus-visible:ring-accent text-sm sm:text-base"
+                    rows={4}
+                  />
+                  
+                  {/* Action Buttons - Fully Responsive */}
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button
+                      onClick={handleGenerate}
+                      disabled={!prompt.trim() || isGenerating || (user?.plan === 'free' && user.apiCallsUsed >= user.apiCallsLimit)}
+                      className="flex-1 h-10 sm:h-11 text-sm sm:text-base"
+                      variant="hero"
                     >
-                      {suggestion}
-                    </Badge>
-                  ))}
+                      {!user ? (
+                        <>
+                          <Lock className="w-4 h-4 mr-2 flex-shrink-0" />
+                          <span className="truncate">Sign In Required</span>
+                        </>
+                      ) : user.plan === 'free' && user.apiCallsUsed >= user.apiCallsLimit ? (
+                        <>
+                          <Zap className="w-4 h-4 mr-2 flex-shrink-0" />
+                          <span className="truncate">Upgrade Plan</span>
+                        </>
+                      ) : isGenerating ? (
+                        <>
+                          <RefreshCw className="w-4 h-4 mr-2 animate-spin flex-shrink-0" />
+                          <span className="truncate">Generating...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4 mr-2 flex-shrink-0" />
+                          <span className="truncate">Generate Model</span>
+                        </>
+                      )}
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      className="sm:w-auto w-full h-10 sm:h-11 text-sm sm:text-base"
+                    >
+                      <Upload className="w-4 h-4 mr-2 flex-shrink-0" />
+                      <span className="truncate">Upload Data</span>
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
 
-          {/* Output Sections */}
-          <div className="space-y-6">
-            {/* Explanation Section */}
+                {/* Suggestions - Mobile Optimized */}
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-foreground">Quick suggestions:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {suggestions.map((suggestion, index) => (
+                      <Badge
+                        key={index}
+                        variant="secondary"
+                        className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors text-xs sm:text-sm py-1 px-2 sm:py-1.5 sm:px-3 leading-tight"
+                        onClick={() => setPrompt(suggestion)}
+                      >
+                        <span className="line-clamp-2 text-center">{suggestion}</span>
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Output Sections - Mobile Optimized */}
+          <div className="order-2 xl:order-2 space-y-4 sm:space-y-6">
+            {/* Explanation Section - Mobile First */}
             {explanationText && (
               <Card className="shadow-card border-0">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <RefreshCw className="w-5 h-5" />
-                    Explanation
+                <CardHeader className="pb-4 sm:pb-6">
+                  <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                    <RefreshCw className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                    <span className="truncate">Explanation</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-             <div className="prose prose-sm max-w-none">
-  <ReactMarkdown
-    remarkPlugins={[remarkGfm]}
-    components={{
-      h1: ({node, ...props}) => <h1 className="text-2xl font-bold text-purple-400" {...props} />,
-      h2: ({node, ...props}) => <h2 className="text-xl font-semibold text-pink-300" {...props} />,
-      p: ({node, ...props}) => <p className="text-muted-foreground leading-relaxed" {...props} />,
-      code: ({node, inline, ...props}) =>
-        inline ? (
-          <code className="bg-muted px-1 py-0.5 rounded text-blue-300" {...props} />
-        ) : (
-          <code className="block bg-muted p-3 rounded-lg text-blue-300 overflow-x-auto" {...props} />
-        )
-    }}
-  >
-    {explanationText}
-  </ReactMarkdown>
-</div>
-
+                  <div className="prose prose-sm sm:prose-base max-w-none">
+                    <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        h1: ({node, ...props}) => <h1 className="text-xl sm:text-2xl font-bold text-purple-400 mb-3" {...props} />,
+                        h2: ({node, ...props}) => <h2 className="text-lg sm:text-xl font-semibold text-pink-300 mb-2" {...props} />,
+                        h3: ({node, ...props}) => <h3 className="text-base sm:text-lg font-semibold text-pink-300 mb-2" {...props} />,
+                        p: ({node, ...props}) => <p className="text-muted-foreground leading-relaxed mb-3 text-sm sm:text-base" {...props} />,
+                        ul: ({node, ...props}) => <ul className="list-disc list-inside space-y-1 mb-3 text-sm sm:text-base" {...props} />,
+                        ol: ({node, ...props}) => <ol className="list-decimal list-inside space-y-1 mb-3 text-sm sm:text-base" {...props} />,
+                        li: ({node, ...props}) => <li className="text-muted-foreground" {...props} />,
+                        code: ({node, inline, ...props}) =>
+                          inline ? (
+                            <code className="bg-muted px-1 py-0.5 rounded text-blue-300 text-xs sm:text-sm" {...props} />
+                          ) : (
+                            <code className="block bg-muted p-2 sm:p-3 rounded-lg text-blue-300 overflow-x-auto text-xs sm:text-sm" {...props} />
+                          ),
+                        blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-accent pl-4 italic text-muted-foreground mb-3" {...props} />,
+                      }}
+                    >
+                      {explanationText}
+                    </ReactMarkdown>
+                  </div>
                 </CardContent>
               </Card>
             )}
 
-            {/* Code Section */}
+            {/* Code Section - Mobile Optimized */}
             <Card className="shadow-card border-0">
-              <CardHeader>
-                <CardTitle className="flex items-center justify-between">
-                  <span className="flex items-center gap-2">
-                    <Code className="w-5 h-5" />
-                    Python Code
+              <CardHeader className="pb-4 sm:pb-6">
+                <CardTitle className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <span className="flex items-center gap-2 text-lg sm:text-xl">
+                    <Code className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                    <span className="truncate">Python Code</span>
                   </span>
                   {generatedCode && (
-                    <div className="flex flex-col sm:flex-row gap-2">
-                      <Button variant="outline" size="sm" onClick={handleCopy}>
-                        <Copy className="w-4 h-4 mr-2" />
-                        Copy Code
+                    <div className="flex flex-col xs:flex-row gap-2 w-full sm:w-auto">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        onClick={handleCopy}
+                        className="flex-1 xs:flex-none text-xs sm:text-sm h-8 sm:h-9"
+                      >
+                        <Copy className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 flex-shrink-0" />
+                        <span className="truncate">Copy Code</span>
                       </Button>
-                      <Button variant="outline" size="sm" onClick={handleDownload}>
-                        <Download className="w-4 h-4 mr-2" />
-                        Download
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        onClick={handleDownload}
+                        className="flex-1 xs:flex-none text-xs sm:text-sm h-8 sm:h-9"
+                      >
+                        <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 flex-shrink-0" />
+                        <span className="truncate">Download</span>
                       </Button>
                     </div>
                   )}
@@ -344,25 +369,33 @@ Make it production-ready and well-structured.`
               <CardContent>
                 {generatedCode ? (
                   <div className="rounded-lg overflow-hidden">
-                    <SyntaxHighlighter
-                      language="python"
-                      style={vscDarkPlus}
-                      customStyle={{
-                        margin: 0,
-                        borderRadius: '0.5rem',
-                        fontSize: '0.875rem',
-                      }}
-                      showLineNumbers={true}
-                      wrapLines={true}
-                      wrapLongLines={true}
-                    >
-                      {generatedCode}
-                    </SyntaxHighlighter>
+                    <div className="overflow-x-auto">
+                      <SyntaxHighlighter
+                        language="python"
+                        style={vscDarkPlus}
+                        customStyle={{
+                          margin: 0,
+                          borderRadius: '0.5rem',
+                          fontSize: window.innerWidth < 640 ? '0.75rem' : '0.875rem',
+                          lineHeight: window.innerWidth < 640 ? '1.4' : '1.5',
+                          padding: window.innerWidth < 640 ? '0.75rem' : '1rem',
+                        }}
+                        showLineNumbers={true}
+                        wrapLines={true}
+                        wrapLongLines={true}
+                        lineNumberStyle={{
+                          minWidth: window.innerWidth < 640 ? '2em' : '2.5em',
+                          fontSize: window.innerWidth < 640 ? '0.7rem' : '0.8rem',
+                        }}
+                      >
+                        {generatedCode}
+                      </SyntaxHighlighter>
+                    </div>
                   </div>
                 ) : (
-                  <div className="bg-muted/50 rounded-lg p-8 text-center text-muted-foreground">
-                    <Code className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                    <p>Your generated ML model code will appear here.</p>
+                  <div className="bg-muted/50 rounded-lg p-6 sm:p-8 text-center text-muted-foreground">
+                    <Code className="w-8 h-8 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 opacity-50" />
+                    <p className="text-sm sm:text-base">Your generated ML model code will appear here.</p>
                   </div>
                 )}
               </CardContent>
