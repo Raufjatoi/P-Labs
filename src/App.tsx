@@ -23,7 +23,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/auth" element={<Auth />} />
-               <Route path="/confirm-email" element={<Email/>} />
+              <Route path="/email" element={<Email/>} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
