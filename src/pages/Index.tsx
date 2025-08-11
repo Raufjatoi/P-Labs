@@ -7,6 +7,7 @@ import { PricingSection } from "@/components/pricing/PricingSection";
 import { AdminPanel } from "@/components/admin/AdminPanel";
 import Footer from "@/components/Footer";
 import TeamSection from "@/components/TeamSection";
+import TestCardSection from "@/components/TestCardSection";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <StreamlitPro />
       <UserDashboard />
       <PricingSection />
+      <TestCardSection/>
       <AdminPanel />
       <TeamSection />
       <Footer />
