@@ -98,7 +98,7 @@ export const PricingSection = () => {
     if (isMobile) {
       toast({
         title: "Switch to Laptop",
-        description: "Please switch to a laptop or desktop computer to subscribe.",
+        description: "Switch to a laptop or desktop computer to subscribe.",
         variant: "destructive"
       });
       return;
@@ -218,7 +218,7 @@ export const PricingSection = () => {
                       ) : plan.price === 0 ? (
                         'Get Started Free'
                       ) : (
-                        isMobile ? 'Please switch to laptop to subscribe' : `Upgrade to ${plan.name}`
+                        isMobile ? 'Switch to laptop' : `Upgrade to ${plan.name}`
                       )}
                     </Button>
                   )}
