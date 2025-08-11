@@ -20,16 +20,16 @@ With **P Labs**, you can bring your machine learning ideas to life simply by des
 
 ## **Technologies Used**
 
-| Technology  | Logo |
-|-------------|------|
-| Supabase    | ![Supabase Logo](public/supabase.png) |
-| React       | ![React Logo](public/react.png) |
-| Vite        | ![Vite Logo](public/vite.png) |
-| Tailwind CSS| ![Tailwind Logo](public/tailwind.png) |
-| Shadcn      | ![Shadcn Logo](public/shadcn.jpg) |
-| Stripe      | ![Stripe Logo](public/stripe.png) |
-| Deno        | ![Deno Logo](public/deno.jpg) |
-| TypeScript  | ![TypeScript Logo](public/ts.png) |  
+<p align="center">
+  <img src="public/supabase.png" alt="Supabase" width="40" height="40" />
+  <img src="public/react.png" alt="React" width="40" height="40" />
+  <img src="public/vite.png" alt="Vite" width="40" height="40" />
+  <img src="public/tailwind.png" alt="Tailwind CSS" width="40" height="40" />
+  <img src="public/shadcn.jpg" alt="Shadcn" width="40" height="40" />
+  <img src="public/stripe.png" alt="Stripe" width="40" height="40" />
+  <img src="public/deno.jpg" alt="Deno" width="40" height="40" />
+  <img src="public/ts.png" alt="TypeScript" width="40" height="40" />
+</p>
 
 ---
 
@@ -48,7 +48,7 @@ Use the following test card details for demo purposes:
 
 ## **P Labs Test Card by Rauf Jatoi** 
 
-![P-Labs test card](public/test.png)  
+![P-Labs test card](public/test_card_2.png)  
 
 ## **Website**
 [https://p-labs.vercel.app/](https://p-labs.vercel.app/)
