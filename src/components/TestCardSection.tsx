@@ -22,14 +22,12 @@ const TestCardSection = () => {
                      transition-all duration-300 transform hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(168,85,247,0.4)]
                      hover:border-purple-400 group"
         >
-          {/* Big Center Image */}
-          <div className="w-full max-w-md rounded-xl overflow-hidden bg-muted/30 border border-border">
-            <img
-              src="test_card.png" // replace with your image path
-              alt="Stripe Test Card"
-              className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
+          {/* Big Center Image - no border */}
+          <img
+            src="test_card.png" // replace with your image path
+            alt="Stripe Test Card"
+            className="w-full h-auto rounded-xl object-cover transition-transform duration-300 group-hover:scale-105"
+          />
 
           {/* Info */}
           <div className="text-center">
