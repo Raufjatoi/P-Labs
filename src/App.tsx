@@ -8,6 +8,7 @@ import { SubscriptionProvider } from "@/context/SubscriptionContext";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
+import Email from "./components/Email";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +23,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/auth" element={<Auth />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+               <Route path="/confirm-email" element={<Email/>} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
